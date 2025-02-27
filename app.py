@@ -41,7 +41,7 @@ def predict():
             input_data_normalized = scaler.transform(input_data)
 
             # Make prediction
-            prediction = model1.predict(input_data_normalized, verbose=0)[0]
+            prediction = model.predict(input_data_normalized, verbose=0)[0]
 
             pred_dict = {
                 "top": float(round(prediction[0], 2)),
