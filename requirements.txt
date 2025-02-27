@@ -4,3 +4,4 @@ tensorflow
 numpy
 joblib
 gunicorn
+dotenv
