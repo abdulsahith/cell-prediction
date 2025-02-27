@@ -10,8 +10,8 @@ CORS(app)
 
 # Load model and scaler
 try:
-    model_path = os.getenv("MODEL_PATH", "LNT4.h5")
-    scaler_path = os.getenv("SCALER_PATH", "scaler4.pkl")
+    model = os.getenv("MODEL_PATH", "LNT4.h5")
+    scaler= os.getenv("SCALER_PATH", "scaler4.pkl")
 except Exception as e:
     print(f"Error loading model or scaler: {str(e)}")
     raise
