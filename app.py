@@ -11,8 +11,8 @@ CORS(app)
 
 # Load model and scaler
 try:
-    model_path= os.getenv("MODEL_PATH", "LNT4.h5")
-    scaler_path= os.getenv("SCALER_PATH", "scaler4.pkl")
+    model_path= os.getenv("MODEL_PATH", "LNT8.h5")
+    scaler_path= os.getenv("SCALER_PATH", "scaler8.pkl")
     model = load_model(model_path)  # Load the actual model
     scaler = joblib.load(scaler_path)
 
