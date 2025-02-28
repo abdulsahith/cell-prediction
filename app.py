@@ -5,6 +5,7 @@ import joblib
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
+
 app = Flask(__name__)
 CORS(app)
 
@@ -12,6 +13,7 @@ CORS(app)
 try:
     model = os.getenv("MODEL_PATH", "LNT4.h5")
     scaler= os.getenv("SCALER_PATH", "scaler4.pkl")
+
 except Exception as e:
     print(f"Error loading model or scaler: {str(e)}")
     raise
@@ -41,7 +43,7 @@ def predict():
             input_data_normalized = scaler.transform(input_data)
 
             # Make prediction
-            prediction = model.predict(input_data_normalized, verbose=0)[0]
+            prediction = model1.predict(input_data_normalized, verbose=0)[0]
 
             pred_dict = {
                 "top": float(round(prediction[0], 2)),
@@ -59,4 +61,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=5000)
